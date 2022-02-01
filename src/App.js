@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header";
+import image from "./images/adventure-time.png";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const handleClick = (e) => {
+    console.log(e.pageX-e.nativeEvent.target.offsetLeft, e.pageY - 160);
+    console.log('margin left of image', e.nativeEvent.target.offsetLeft);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <div className="image-wrapper">
+        <img
+          src={image}
+          alt="main"
+          draggable="false"
+          onClick={(e) => handleClick(e)}
+        ></img>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
