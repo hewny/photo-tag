@@ -33,7 +33,7 @@ const Tooltip = (props) => {
     ) {
       let tempTargets = [...targets.filter((item) => item !== e.target.id)];
       setTargets(tempTargets);
-      let tempFoundTargets = foundTargets;
+      let tempFoundTargets = [...foundTargets];
       tempFoundTargets.push(e.target.id);
       setFoundTargets(tempFoundTargets);
     } else {

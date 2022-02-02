@@ -1,13 +1,5 @@
-import { useEffect, useState } from "react";
-
 const MarkAnswer = (props) => {
   const { margins, answer, foundTargets } = props;
-  const [list, setList] = useState(foundTargets)
-
-  useEffect(() => {
-      console.log("useEffect triggered");
-      setList(foundTargets)
-  },[foundTargets])
   
   return (
     <div className="answer-wrapper">
