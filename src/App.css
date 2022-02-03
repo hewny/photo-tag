@@ -28,6 +28,69 @@ html {
   text-align: center;
 }
 
+.header-leaderboard {
+  position: absolute;
+  top: 50px;
+  right: 200px;
+  width: auto;
+  border: 5px solid black;
+  border-radius: 15px;
+  padding: 5px;
+  font-weight: bold;
+  text-align: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.header-leaderboard:hover {
+  cursor: pointer;
+  border: 5px solid red;
+  color: red;
+}
+
+.header-leaderboard-table {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: lightsteelblue;
+  border: none;
+  padding: 10px
+}
+
+.header-leaderboard-table table {
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+.header-leaderboard-table td {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.header-leaderboard-table span {
+  display: inline-block;
+  margin-top: 5px;
+  border: 5px solid black;
+  border-radius: 15px;
+  padding: 5px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.header-leaderboard-table span:hover {
+  border: 5px solid red;
+  color: red;
+}
+
 .header-target {
   display: flex;
   justify-content: center;
