@@ -1,13 +1,16 @@
 import "./App.css";
+import { useState } from 'react'
 import Header from "./components/Header";
 import Image from "./components/Image";
 import "./App.css";
 
 const App = () => {
+  const [isActive, setIsActive] = useState(true);
+
   return (
     <div>
-      <Header />
-      <Image />
+      <Header isActive={isActive} />
+      <Image isActive={isActive} setIsActive={setIsActive}/>
     </div>
   );
 };

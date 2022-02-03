@@ -1,12 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import mainImage from "../images/adventure-time.png";
 import MarkAnswer from "./MarkAnswer";
 import Tooltip from "./Tooltip";
 
-const Image = () => {
+const Image = (props) => {
+  const { isActive, setIsActive } = props
   const [lastClick, setLastClick] = useState([0, 0]);
   const [margins, setMargins] = useState([0, 0]);
   const [foundTargets, setFoundTargets] = useState([]);
+
+  useEffect(() => {
+    if (foundTargets.length === 3) {
+      setIsActive(!isActive)
+    }
+  },[foundTargets])
 
   const answer = {
     beemo: [712, 304],
