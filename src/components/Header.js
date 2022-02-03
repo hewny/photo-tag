@@ -5,6 +5,7 @@ import jake from "../images/jake.png";
 import lemongrab from "../images/lemongrab.png";
 import Leaderboard from "./Leaderboard";
 import FormatTime from "./FormatTime";
+import SubmitWindow from './SubmitWindow'
 
 const Header = (props) => {
   const { isActive } = props;
@@ -22,6 +23,7 @@ const Header = (props) => {
     { name: "Bob", time: 123 },
     { name: "John", time: 20 },
   ]);
+  const [name, setName] = useState("")
 
   useEffect(() => {
     let interval = null;
@@ -58,6 +60,7 @@ const Header = (props) => {
         </span>
       </div>
       <Leaderboard leaderboardActive={leaderboardActive} setLeaderboardActive={setLeaderboardActive} leaderboard={leaderboard} />
+      <SubmitWindow isActive={isActive} seconds={seconds} name={name} setName={setName} />
     </div>
   );
 };

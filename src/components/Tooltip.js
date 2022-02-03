@@ -1,13 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 
 const Tooltip = (props) => {
-  const { lastClick, margins, answer, foundTargets, setFoundTargets} = props;
-  const isMounted = useRef(false);
+  const { lastClick, margins, answer, foundTargets, setFoundTargets, setMessageID} = props;
   const [styleDisplay, setStyleDisplay] = useState("none");
   const [styleLeft, setStyleLeft] = useState("");
   const [styleTop, setStyleTop] = useState("");
-
   const [targets, setTargets] = useState(["beemo", "jake", "lemongrab"]);
+  const isMounted = useRef(false);
 
   const tooltipStyle = {
     display: styleDisplay,
@@ -36,8 +35,9 @@ const Tooltip = (props) => {
       let tempFoundTargets = [...foundTargets];
       tempFoundTargets.push(e.target.id);
       setFoundTargets(tempFoundTargets);
+      setMessageID(e.target.id)
     } else {
-      console.log("not close enough");
+      setMessageID("no result");
     }
   };
 

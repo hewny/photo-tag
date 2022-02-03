@@ -2,18 +2,20 @@ import { useEffect, useState } from "react";
 import mainImage from "../images/adventure-time.png";
 import MarkAnswer from "./MarkAnswer";
 import Tooltip from "./Tooltip";
+import Message from "./Message";
 
 const Image = (props) => {
-  const { isActive, setIsActive } = props
+  const { isActive, setIsActive } = props;
   const [lastClick, setLastClick] = useState([0, 0]);
   const [margins, setMargins] = useState([0, 0]);
   const [foundTargets, setFoundTargets] = useState([]);
+  const [messageID, setMessageID] = useState(null);
 
   useEffect(() => {
     if (foundTargets.length === 3) {
-      setIsActive(!isActive)
+      setIsActive(!isActive);
     }
-  },[foundTargets])
+  },[foundTargets]);
 
   const answer = {
     beemo: [712, 304],
@@ -46,12 +48,14 @@ const Image = (props) => {
         answer={answer}
         foundTargets={foundTargets}
         setFoundTargets={setFoundTargets}
+        setMessageID={setMessageID}
       />
       <MarkAnswer
         margins={margins}
         answer={answer}
         foundTargets={foundTargets}
       />
+      <Message messageID={messageID} setMessageID={setMessageID} />
     </div>
   );
 };
