@@ -61,7 +61,7 @@ const Header = (props) => {
     if (type === "added") {
       setLeaderboard((leaderboard) => {
         let list = [...leaderboard];
-        list.splice(newIndex, 1, { name: name, time: time });
+        list.splice(newIndex, 0, { name: name, time: time });
         return list;
       });
 
