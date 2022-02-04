@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from 'react'
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Image from "./components/Image";
 import "./App.css";
@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div>
       <Header isActive={isActive} />
-      <Image isActive={isActive} setIsActive={setIsActive}/>
+      <Image isActive={isActive} setIsActive={setIsActive} />
     </div>
   );
 };
